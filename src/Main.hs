@@ -15,9 +15,9 @@ dispatch ("help":_)                        = do
     putStrLn "help\t\t\t\tabre o menu de ajuda"
     putStrLn "rsa keygen\t\t\tgera um par de chaves RSA e salve em dois arquivos separados"
     putStrLn "rsa encrypt_text _\t\tcriptografa o conteudo inserido no terminal usando o algoritmo RSA"
-    putStrLn "rsa encrypt_text filePath\tcriptografa o conteudo de um arquivo usando o algoritmo RSA"
+    putStrLn "rsa encrypt_file filePath\tcriptografa o conteudo de um arquivo usando o algoritmo RSA"
     putStrLn "rsa decrypt_text _\t\tdescriptografa o conteudo inserido no terminal usando o algoritmo RSA"
-    putStrLn "rsa decrypt_text filePath\tdescriptografa o conteudo de um arquivo usando o algoritmo RSA"
+    putStrLn "rsa decrypt_file filePath\tdescriptografa o conteudo de um arquivo usando o algoritmo RSA"
 dispatch ("rsa":"keygen":_)                = rsa_keygen
 
 dispatch ("rsa":"encrypt_text":_)          = rsa_encrypt_text
