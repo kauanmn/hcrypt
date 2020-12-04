@@ -44,7 +44,6 @@ rsa_keygen = do
     chavePublica  <- openFile "chaveRSA_Publica.txt" WriteMode
     chavePrivada  <- openFile "chaveRSA_Privada.txt" WriteMode
     randGen <- getStdGen
-    putStr "Aguarde..."
     let (p,q) = obterPQ $ listaPrimos randGen
     hPutStrLn chavePublica $ criarChavePublica (p,q)
     hPutStrLn chavePrivada $ criarChavePrivada (p,q)
