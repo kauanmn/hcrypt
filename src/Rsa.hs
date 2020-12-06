@@ -182,8 +182,8 @@ formaMillerRabin n = (d, fromIntegral s)
 
 iteracaoMillerRabin :: (Integral a, Integral b) => b -> a -> a -> Bool
 iteracaoMillerRabin s n x
-    | k == 1 = False
-    | s == 1 = False 
+    | k == 1     = False
+    | s == 1     = False 
     | k == (n-1) = True
     | otherwise  = iteracaoMillerRabin (s-1) n k
     where k = moduloExp x 2 n
@@ -194,7 +194,7 @@ listaMillerRabin n k gen  =
     let (d,s)         = formaMillerRabin n
         (a,newGen)    = randomR (2, (n-2)) gen
         testeRabin    = moduloExp a d n
-        resultado     = if ( testeRabin == 1 || testeRabin == (n-1) ) 
+        lista         = if ( testeRabin == 1 || testeRabin == (n-1) ) 
                         then listaMillerRabin n (k-1) newGen
                         else testeRabin : listaMillerRabin n (k-1) newGen  
-    in resultado
+    in  lista
